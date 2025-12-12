@@ -1,0 +1,186 @@
+body{
+    background: rgb(150, 150, 150);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    min-height: 100vh;
+}
+.conteiner{
+    border: solid 1px black;
+    padding: 10px 20px;
+    text-align: center;
+}
+.conteiner>p{
+    max-width: 491.8px;
+}
+input:focus{
+    outline: black 1px solid;
+}
+input.no-spinners{
+    background: rgb(150, 150, 150);
+    color: black;
+    border: 1px solid black;
+    width: 50px;
+    margin-left: 10px;
+    padding: 5px;
+}
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.no-spinners[type=number] {
+    -moz-appearance: textfield;
+    appearance: none;
+}
+.build{
+    width: 140px;
+    padding: 5px;
+    margin-bottom: 15px;
+    background: rgb(150, 150, 150);
+}
+.build:hover, .build:focus{
+    background: rgb(100, 100, 100);
+    outline: black;
+}
+.pressed{
+    border: 3px solid black;
+    transform: scale(0.95);
+    background: rgb(100, 100, 100);
+}
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+.buttons > button{
+    display: none;
+    padding: 10px;
+    background: rgb(150, 150, 150);
+}
+.buttons >*:hover, .buttons > *:focus{
+    background: rgb(100, 100, 100);
+    outline: black;
+}
+
+/* ////////////////////////////////////// */
+
+.cell{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    outline: black;
+    cursor: default;
+}
+.cell > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #666;
+    border: solid 1px black;
+    outline: black;
+    cursor: auto;
+}
+.cell > .barra-2,
+.cell > .barra-3,
+.cell > .barra-3a,
+.cell > .barra-4 {
+    width: 5px;
+    height: calc(100px * sqrt(2));
+    transform: rotate(45deg);
+    background-color: black;
+    cursor: default;
+}
+
+/* ////////////////////////////////////// */
+
+.inner-valor-unique{
+    padding: 3px;
+    margin: 0px 5px;
+    width: 15px;
+}
+
+/* ////////////////////////////////////// */
+
+.inner-valor-4-1{
+    width: 15px;
+    margin: -10px 0px 0px 7px;
+}
+.inner-valor-4-11{
+    width: 15px;
+    margin: -60px 0px 0px 0px;
+}
+/* .barra-4{} */
+.inner-valor-4-2{
+    width: 15px;
+    margin: 0px 0px -50px 0px;
+}
+.inner-valor-4-22{
+    width: 15px;
+    margin: 0px 7px 0px 0px;
+}
+
+/* ////////////////////////////////////// */
+
+.inner-valor-2-1{
+    width: 20px;
+    margin: -40px 0px 0px 10px;
+}
+/* .barra-2{} */
+.inner-valor-2-2{
+    width: 20px;
+    margin: 0px 10px -40px 0px;
+}
+
+/* ////////////////////////////////////// */
+
+.inner-valor-3-1{
+    width: 22px;
+    margin: -15px 0px 0px 10px;
+}
+.inner-valor-3-11{
+    width: 22px;
+    margin: -60px 0px 0px 5px;
+}
+.barra-3{
+    width: 7px;
+    margin: 0px 17px 0px 0px;
+}
+.inner-valor-3-2{
+    width: 22px;
+    margin: 0px 15px -45px 0px;
+}
+.inner-valor-3-22{
+    display: none;
+}
+
+/* ////////////////////////////////////// */
+
+.inner-valor-3a-1{
+    width: 18px;
+    margin: -50px 0px 0px 15px;
+}
+.inner-valor-3a-11{
+    display: none;
+}
+.barra-3a{
+    margin: 0px 0px 0px 10px;
+}
+.inner-valor-3a-2{
+    width: 18px;
+    margin: 0px 3px -50px 0px;
+}
+.inner-valor-3a-22{
+    width: 18px;
+    margin: 5px 5px 0px 0px;
+}

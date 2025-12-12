@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<title>Gelosia</title>
+</head>
+<body>
+	<div class="conteiner">
+		<p>
+			Digite a quantidade de casas numéricas dos dois fatores para fazer a Gelosia, por exemplo, 258 vezes 19, digite 3 no Primeiro Fator e 2 no Segundo Fator
+			<br>
+			(inclua as casas decimais, por exemplo, 10.2, digite 3)
+		</p>
+		<label>
+			Primeiro Fator:<input type="text" class="no-spinners f1" oninput="onlynumber(this)">
+		</label>
+		<br><br>
+		<label>
+			Segundo Fator:<input type="text" class="no-spinners f2" oninput="onlynumber(this)">
+		</label>
+		<br><br>
+		<button class="build">Montar Gelosia</button>
+	</div>
+	<br><br>
+	<div class="jelozia"></div>
+	<br><br>
+	<div class="buttons">
+		<button class="finish" onclick="finishQuestion()">Finalizar Questão</button>
+	<br>
+		<button class="again" onclick="backQuestion()">Voltar para Questão</button>
+	</div>
+</body>
+<script src="./script.js"></script>
+</html>

@@ -560,7 +560,6 @@ function buildGelosia(){
                 innerValor4_11.setAttribute("contenteditable", "true");
                 innerValor4_11.setAttribute("oninput", "return onlynumber(event)");
                 innerValor4_11.classList.add("inner");
-                innerValor4_11.setAttribute("onclick", "transport(this)");
                 const innerBarra4 = document.createElement("div");
                 innerBarra4.className = "barra-4";
                 const innerValor4_2 = document.createElement("div");
@@ -573,7 +572,6 @@ function buildGelosia(){
                 innerValor4_22.setAttribute("contenteditable", "true");
                 innerValor4_22.setAttribute("oninput", "return onlynumber(event)");
                 innerValor4_22.classList.add("inner");
-                innerValor4_22.setAttribute("onclick", "transport(this)");
                 cell.appendChild(innerValor4_1);
                 cell.appendChild(innerValor4_11);
                 cell.appendChild(innerBarra4);

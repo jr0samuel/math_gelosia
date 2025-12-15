@@ -608,6 +608,7 @@ function buildGelosia(){
     if(f1_2>2&&f2_2>2){
         document.querySelector('.finish').style.display="inline-block";
         document.querySelector('.finish').setAttribute("tabindex","0");
+        document.querySelector('.again').style.display="none";
     }else{
         document.querySelector('.finish').style.display="none";
     };

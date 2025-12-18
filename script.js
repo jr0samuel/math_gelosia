@@ -1,18 +1,21 @@
 function onlynumber(el){
-    el.value = el.value.replace(/[^0-9]/g,"");
-    el.addEventListener("keydown",e=>{
-        if(e.key===" "){
-            e.preventDefault();
-        };
-    });
-    el.addEventListener("beforeinput",e=>{
-        if(e.inputType==="insertText"&&e.data===" "){
-            e.preventDefault();
-        };
-        if(e.data && /[^0-9]/.test(e.data)){
-            e.preventDefault();
-        };
-    });
+    try{
+        el.value = el.value.replace(/[^0-9]/g,"");
+        el.addEventListener("keydown",e=>{
+            if(e.key===" "){
+                e.preventDefault();
+            };
+        });
+        el.addEventListener("beforeinput",e=>{
+            if(e.inputType==="insertText"&&e.data===" "){
+                e.preventDefault();
+            };
+            if(e.data && /[^0-9]/.test(e.data)){
+                e.preventDefault();
+            };
+        });
+    }
+    catch {};
 };
 
 document.querySelector('.f1').addEventListener('keydown', function(e){
@@ -609,24 +612,30 @@ function buildGelosia(){
         document.querySelector('.finish').style.display="inline-block";
         document.querySelector('.finish').setAttribute("tabindex","0");
         document.querySelector('.again').style.display="none";
+        document.querySelector('.instructionOne').style.display="inline-block";
+        document.querySelector('.instructionTwo').style.display="none";
     }else{
         document.querySelector('.finish').style.display="none";
+        document.querySelector('.instructionOne').style.display="none";
     };
 };
 
 function finishQuestion(){
     let inners = document.querySelectorAll('[contenteditable="true"]');
     inners.forEach((inner) => {
-        inner.setAttribute("contenteditable", "false");
+        inner.removeAttribute("contenteditable");
+        inner.style.cursor = "default";
     });
-    document.querySelector('.again').style.display="inline-block";
     document.querySelector('.finish').setAttribute("tabindex","0");
     document.querySelector('.again').setAttribute("tabindex","0");
+    document.querySelector('.again').style.display="inline-block";
+    document.querySelector('.instructionTwo').style.display="inline-block";
 };
 function backQuestion(){
-    let inners = document.querySelectorAll('[contenteditable="false"]');
+    let inners = document.querySelectorAll('.cell > *');
     inners.forEach((inner) => {
         inner.setAttribute("contenteditable", "true");
+        inner.style.cursor = "auto";
     });
     document.querySelector('.finish').setAttribute("tabindex","0");
     document.querySelector('.again').setAttribute("tabindex","0");

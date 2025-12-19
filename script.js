@@ -17,14 +17,12 @@ function onlynumber(el){
     }
     catch {};
 };
-
 document.querySelector('.f1').addEventListener('keydown', function(e){
     if (e.key === 'Enter') buildGelosia();
 });
 document.querySelector('.f2').addEventListener('keydown',function(e){
     if(e.key==='Enter')buildGelosia();
 });
-
 document.querySelector('.build').addEventListener("keydown", function(event){
   if ((event.key === "Enter" || event.key === " ") && document.activeElement.tagName === "BUTTON"){
     event.preventDefault();
@@ -53,7 +51,6 @@ document.querySelector('.build').addEventListener('mouseup', function(){
     buildGelosia();
     this.classList.remove("pressed");
 });
-
 function buildGelosia(){
     let f1_2 = parseInt(document.querySelector('.f1').value) + 2;
     let f2_2 = parseInt(document.querySelector('.f2').value) + 2;
@@ -610,6 +607,7 @@ function buildGelosia(){
     if(f1_2<=2||f2_2<=2){gelosia.innerHTML="";}
     if(f1_2>2&&f2_2>2){
         document.querySelector('.finish').style.display="inline-block";
+        document.querySelector('.finish').style.marginLeft="0px";
         document.querySelector('.finish').setAttribute("tabindex","0");
         document.querySelector('.again').style.display="none";
         document.querySelector('.instructionOne').style.display="inline-block";
@@ -619,20 +617,20 @@ function buildGelosia(){
         document.querySelector('.instructionOne').style.display="none";
     };
 };
-
 function finishQuestion(){
-    let inners = document.querySelectorAll('[contenteditable="true"]');
+    let inners = document.querySelectorAll('.inner');
     inners.forEach((inner) => {
         inner.removeAttribute("contenteditable");
         inner.style.cursor = "default";
     });
     document.querySelector('.finish').setAttribute("tabindex","0");
     document.querySelector('.again').setAttribute("tabindex","0");
+    document.querySelector('.finish').style.marginLeft="15px";
     document.querySelector('.again').style.display="inline-block";
     document.querySelector('.instructionTwo').style.display="inline-block";
 };
 function backQuestion(){
-    let inners = document.querySelectorAll('.cell > *');
+    let inners = document.querySelectorAll('.inner');
     inners.forEach((inner) => {
         inner.setAttribute("contenteditable", "true");
         inner.style.cursor = "auto";
@@ -640,7 +638,6 @@ function backQuestion(){
     document.querySelector('.finish').setAttribute("tabindex","0");
     document.querySelector('.again').setAttribute("tabindex","0");
 };
-
 document.querySelector('.finish').addEventListener('keydown',function(evt){
     if((evt.key === "Enter" || evt.key === " ") && document.activeElement.tagName === "BUTTON"){
         evt.preventDefault();
@@ -667,7 +664,6 @@ document.querySelector('.again').addEventListener('keyup',function(evt){
         this.blur();
     };
 });
-
 const btns = document.querySelector('.buttons');
 btns.addEventListener('touchstart',e=>{
     if(e.target.closest('.finish')){
@@ -705,7 +701,6 @@ btns.addEventListener('touchend',e=>{
         btn.setAttribute("tabindex","0");
     };
 });
-
 document.querySelector('.finish').addEventListener('mousedown', function(e){
     e.preventDefault();
     this.classList.add("pressed");
@@ -713,6 +708,8 @@ document.querySelector('.finish').addEventListener('mousedown', function(e){
 document.querySelector('.finish').addEventListener('mouseup', function(){
     finishQuestion();
     this.classList.remove("pressed");
+    this.blur();
+    document.querySelector('.again').blur();
 });
 document.querySelector('.again').addEventListener('mousedown', function(e){
     e.preventDefault();
@@ -721,4 +718,6 @@ document.querySelector('.again').addEventListener('mousedown', function(e){
 document.querySelector('.again').addEventListener('mouseup', function(){
     backQuestion();
     this.classList.remove("pressed");
+    this.blur();
+    document.querySelector('.finish').blur();
 });

@@ -704,20 +704,20 @@ btns.addEventListener('touchend',e=>{
 document.querySelector('.finish').addEventListener('mousedown', function(e){
     e.preventDefault();
     this.classList.add("pressed");
+    document.querySelector('.again').blur();
 });
 document.querySelector('.finish').addEventListener('mouseup', function(){
     finishQuestion();
     this.classList.remove("pressed");
     this.blur();
-    document.querySelector('.again').blur();
 });
 document.querySelector('.again').addEventListener('mousedown', function(e){
     e.preventDefault();
     this.classList.add("pressed");
+    document.querySelector('.finish').blur();
 });
 document.querySelector('.again').addEventListener('mouseup', function(){
     backQuestion();
     this.classList.remove("pressed");
     this.blur();
-    document.querySelector('.finish').blur();
 });

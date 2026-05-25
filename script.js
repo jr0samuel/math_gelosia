@@ -17,11 +17,20 @@ function onlynumber(el){
     }
     catch {};
 };
-document.querySelector('.f1').addEventListener('keydown', function(e){
-    if (e.key === 'Enter') buildGelosia();
+document.querySelector('#f1').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') {buildGelosia();
+    document.querySelector('.build').classList.add("pressed");}
 });
-document.querySelector('.f2').addEventListener('keydown',function(e){
-    if(e.key==='Enter')buildGelosia();
+document.querySelector('#f1').addEventListener('keyup', function(e){
+    if (e.key === 'Enter') {
+    document.querySelector('.build').classList.remove("pressed");}
+});
+document.querySelector('#f2').addEventListener('keydown',function(e){
+    if(e.key==='Enter'){buildGelosia();
+    document.querySelector('.build').classList.add("pressed");}
+});
+document.querySelector('#f2').addEventListener('keyup',function(e){
+    if(e.key==='Enter')document.querySelector('.build').classList.remove("pressed");
 });
 document.querySelector('.build').addEventListener("keydown", function(event){
   if ((event.key === "Enter" || event.key === " ") && document.activeElement.tagName === "BUTTON"){
@@ -52,8 +61,8 @@ document.querySelector('.build').addEventListener('mouseup', function(){
     this.classList.remove("pressed");
 });
 function buildGelosia(){
-    let f1_2 = parseInt(document.querySelector('.f1').value) + 2;
-    let f2_2 = parseInt(document.querySelector('.f2').value) + 2;
+    let f1_2 = parseInt(document.querySelector('#f1').value) + 2;
+    let f2_2 = parseInt(document.querySelector('#f2').value) + 2;
     let gelosia = document.querySelector('.jelozia');
     gelosia.innerHTML = '';
     gelosia.style.display = "grid";

@@ -77,13 +77,29 @@ function buildGelosia(){
                 cell.style.backgroundColor = "#666";
                 cell.style.color = "#fff";
             };
-            if(l === 1 && c > 1 && c < f1_2 || l > 1 && l < f2_2 && c === f1_2 || l > 1 && l < f2_2 && c === 1 || l === f2_2 && c > 1 && c < f1_2){
-                const innerValorUnique = document.createElement("div");
-                innerValorUnique.className = "inner-valor-unique";
-                innerValorUnique.setAttribute("contenteditable", "true");
-                innerValorUnique.setAttribute("oninput", "return onlynumber(event)");
-                innerValorUnique.classList.add("inner");
-                cell.appendChild(innerValorUnique);
+            if(l === 1 && c > 1 && c < f1_2){
+                const innerValorUniqueF1 = document.createElement("div");
+                innerValorUniqueF1.className = "inner-valor-unique-f1";
+                innerValorUniqueF1.setAttribute("contenteditable", "true");
+                innerValorUniqueF1.setAttribute("oninput", "return onlynumber(event)");
+                innerValorUniqueF1.classList.add("inner", "inner-valor-unique");
+                cell.appendChild(innerValorUniqueF1);
+            };
+            if(l > 1 && l < f2_2 && c === f1_2){
+                const innerValorUniqueF2 = document.createElement("div");
+                innerValorUniqueF2.className = "inner-valor-unique-f2";
+                innerValorUniqueF2.setAttribute("contenteditable", "true");
+                innerValorUniqueF2.setAttribute("oninput", "return onlynumber(event)");
+                innerValorUniqueF2.classList.add("inner", "inner-valor-unique");
+                cell.appendChild(innerValorUniqueF2);
+            };
+            if(l > 1 && l < f2_2 && c === 1 || l === f2_2 && c > 1 && c < f1_2){
+                const innerValorUniqueProduto = document.createElement("div");
+                innerValorUniqueProduto.className = "inner-valor-unique-produto";
+                innerValorUniqueProduto.setAttribute("contenteditable", "true");
+                innerValorUniqueProduto.setAttribute("oninput", "return onlynumber(event)");
+                innerValorUniqueProduto.classList.add("inner", "inner-valor-unique");
+                cell.appendChild(innerValorUniqueProduto);
             };
             if(f2_2 === 3 && f1_2 === 3 && (l === 2 && c > 1 && c < f1_2)){
                 const innerValor2_1 = document.createElement("div");

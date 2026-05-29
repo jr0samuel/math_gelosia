@@ -121,6 +121,18 @@ input.no-spinners{
     margin: 0px 5px;
     width: 15px;
 }
+.inner-valor-unique-f1{
+    outline: 3px solid blue;
+    border: none;
+}
+.inner-valor-unique-f2{
+    outline: 3px solid red;
+    border: none;
+}
+.inner-valor-unique-produto{
+    outline: 3px solid greenyellow;
+    border: none;
+}
 
 /* ////////////////////////////////////// */
 

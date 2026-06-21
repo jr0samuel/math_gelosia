@@ -3,8 +3,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin: 10px auto;
+    padding: 0 10px;
     min-height: 100vh;
     overflow: auto;
     width: fit-content;
@@ -52,6 +52,10 @@ input.no-spinners{
     border: 3px solid black;
     transform: scale(0.95);
     background: rgb(100, 100, 100);
+}
+button {
+    /* outline: none; */
+    border: 2px solid black;
 }
 .buttons{
     display: flex;
@@ -120,19 +124,11 @@ input.no-spinners{
     padding: 3px;
     margin: 0px 5px;
     width: 15px;
-}
-.inner-valor-unique-f1{
-    outline: 3px solid blue;
     border: none;
 }
-.inner-valor-unique-f2{
-    outline: 3px solid red;
-    border: none;
-}
-.inner-valor-unique-produto{
-    outline: 3px solid greenyellow;
-    border: none;
-}
+.inner-valor-unique-f1{ outline: 3px solid blue; }
+.inner-valor-unique-f2{ outline: 3px solid red; }
+.inner-valor-unique-produto{ outline: 3px solid greenyellow; }
 
 /* ////////////////////////////////////// */
 

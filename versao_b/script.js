@@ -61,8 +61,12 @@ document.querySelector('.build').addEventListener('mouseup', function(){
     this.classList.remove("pressed");
 });
 function buildGelosia(){
-    let f1_2 = parseInt(document.querySelector('#f1').value) + 2;
-    let f2_2 = parseInt(document.querySelector('#f2').value) + 2;
+    let f_1 = document.querySelector('#f1').value;
+    let f_2 = document.querySelector('#f2').value;
+    let f1_digitado = f_1.split('');
+    let f2_digitado = f_2.split('');
+    let f1_2 = f1_digitado.length + 2;
+    let f2_2 = f2_digitado.length + 2;
     let gelosia = document.querySelector('.jelozia');
     gelosia.innerHTML = '';
     gelosia.style.display = "grid";
@@ -83,6 +87,7 @@ function buildGelosia(){
                 innerValorUniqueF1.setAttribute("contenteditable", "true");
                 innerValorUniqueF1.setAttribute("oninput", "return onlynumber(event)");
                 innerValorUniqueF1.classList.add("inner", "inner-valor-unique");
+                innerValorUniqueF1.textContent = f1_digitado[c - 2] || "";
                 cell.appendChild(innerValorUniqueF1);
             };
             if(l > 1 && l < f2_2 && c === f1_2){
@@ -91,6 +96,7 @@ function buildGelosia(){
                 innerValorUniqueF2.setAttribute("contenteditable", "true");
                 innerValorUniqueF2.setAttribute("oninput", "return onlynumber(event)");
                 innerValorUniqueF2.classList.add("inner", "inner-valor-unique");
+                innerValorUniqueF2.textContent = f2_digitado[l - 2] || "";
                 cell.appendChild(innerValorUniqueF2);
             };
             if(l > 1 && l < f2_2 && c === 1 || l === f2_2 && c > 1 && c < f1_2){

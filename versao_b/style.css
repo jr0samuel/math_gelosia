@@ -19,7 +19,7 @@ body{
     color: black;
 }
 .conteiner>p{
-    max-width: 491.8px;
+    max-width: 537px;
 }
 input:focus{
     outline: black 1px solid;

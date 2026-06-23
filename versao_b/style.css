@@ -129,6 +129,7 @@ button {
     width: 15px;
     border: none;
 }
+.inner-f{ cursor: default; }
 .inner-valor-unique-f1{ outline: 3px solid blue; }
 .inner-valor-unique-f2{ outline: 3px solid red; }
 .inner-valor-unique-produto{ outline: 3px solid greenyellow; }

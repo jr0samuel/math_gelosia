@@ -84,18 +84,14 @@ function buildGelosia(){
             if(l === 1 && c > 1 && c < f1_2){
                 const innerValorUniqueF1 = document.createElement("div");
                 innerValorUniqueF1.className = "inner-valor-unique-f1";
-                innerValorUniqueF1.setAttribute("contenteditable", "true");
-                innerValorUniqueF1.setAttribute("oninput", "return onlynumber(event)");
-                innerValorUniqueF1.classList.add("inner", "inner-valor-unique");
+                innerValorUniqueF1.classList.add("inner-valor-unique", "inner-f");
                 innerValorUniqueF1.textContent = f1_digitado[c - 2] || "";
                 cell.appendChild(innerValorUniqueF1);
             };
             if(l > 1 && l < f2_2 && c === f1_2){
                 const innerValorUniqueF2 = document.createElement("div");
                 innerValorUniqueF2.className = "inner-valor-unique-f2";
-                innerValorUniqueF2.setAttribute("contenteditable", "true");
-                innerValorUniqueF2.setAttribute("oninput", "return onlynumber(event)");
-                innerValorUniqueF2.classList.add("inner", "inner-valor-unique");
+                innerValorUniqueF2.classList.add("inner-valor-unique", "inner-f");
                 innerValorUniqueF2.textContent = f2_digitado[l - 2] || "";
                 cell.appendChild(innerValorUniqueF2);
             };

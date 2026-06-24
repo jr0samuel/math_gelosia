@@ -609,32 +609,19 @@ function buildGelosia(){
             document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
                 el.addEventListener('keydown',e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();};});
                 el.addEventListener("input",()=>{
-                    const sel = window.getSelection();
-                    const range = sel.getRangeAt(0);
-                    const cursorPos = range.startOffset;
-                    el.textContent = el.textContent.replace(/\D/g,"");
-                    const newRange = document.createRange();
-                    newRange.setStart(el.firstChild || el, Math.min(cursorPos, el.textContent.length));
-                    newRange.collapse(true);
-                    sel.removeAllRanges();
-                    sel.addRange(newRange);
+                    const clean = el.textContent.replace(/\D/g,"").slice(0,1);
+                    el.textContent = clean;
+                        const range = document.createRange();
+                        const sel = window.getSelection();
+                        range.selectNodeContents(el);
+                        range.collapse(false);
+                        sel.removeAllRanges();
+                        sel.addRange(range);
                 });
                 el.addEventListener("beforeinput",e=>{
-                    if(e.inputType==="insertText"&&e.data===" "){
-                        e.preventDefault();
-                    };
-                    if(e.data && /[^0-9]/.test(e.data)){
-                        e.preventDefault();
-                    };
-                });
-                el.addEventListener('beforeinput', (e) => {
-                    if (e.inputType.startsWith('delete')) {
-                        return;
-                    };
-                    const conteudoAtual = el.innerText;
-                    if (conteudoAtual.length >= 1) {
-                        e.preventDefault();
-                    };
+                    if(e.data&&/[^0-9]/.test(e.data))e.preventDefault();
+                    if(e.inputType.startsWith('delete'))return;
+                    if(e.data&&el.textContent.length>=1) e.preventDefault();
                 });
             });
         };

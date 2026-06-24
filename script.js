@@ -609,12 +609,12 @@ function buildGelosia(){
                 el.addEventListener("input",()=>{
                     const clean = el.textContent.replace(/\D/g,"").slice(0,1);
                     el.textContent = clean;
-                        const range = document.createRange();
-                        const sel = window.getSelection();
-                        range.selectNodeContents(el);
-                        range.collapse(false);
-                        sel.removeAllRanges();
-                        sel.addRange(range);
+                    const range = document.createRange();
+                    const sel = window.getSelection();
+                    range.selectNodeContents(el);
+                    range.collapse(false);
+                    sel.removeAllRanges();
+                    sel.addRange(range);
                 });
                 el.addEventListener("beforeinput",e=>{
                     if(e.data&&/[^0-9]/.test(e.data))e.preventDefault();

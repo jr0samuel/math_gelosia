@@ -17,6 +17,8 @@ body{
 }
 .link {
     color: black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .conteiner>p{
     max-width: 537px;

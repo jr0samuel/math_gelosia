@@ -20,6 +20,13 @@ body{
     margin-left: 10px;
     margin-right: 10px;
 }
+@media screen and (max-width: 420px) {
+    .conteiner div{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 .conteiner>p{
     max-width: 491.8px;
 }
